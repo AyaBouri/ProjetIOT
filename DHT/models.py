@@ -1,5 +1,6 @@
 from django.core.mail import send_mail
 from django.db import models
+
 # Create your models here.
 from django.db import models
 class Dht11(models.Model):
