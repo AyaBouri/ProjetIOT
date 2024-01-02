@@ -1,15 +1,59 @@
-{% extends 'authen.html' %}
-{% block content %}
-    <p>{{ message }}</p>
-    
-    
-
-   <form method="post">
-   
-    {{ form.as_p }}
-        {% csrf_token %}
-   
-        <button type="submit" >Se connecter</button>
-
-    </form>
-{% endblock content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page with Background Image Example</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <style>
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 50px; /* Ajustez la taille de la police selon vos préférences */
+        }
+        span {
+            color:#002fa7;
+        }
+        form .btn {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0.9rem 2.5rem;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            font-size: 17px;
+        }
+        </style>
+    </head>
+    <body>
+         <div class="wrapper">
+            <form action="post">
+                {% csrf_token %}
+              <h1>Login</h1>
+              <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+              </div>
+              <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt' ></i>
+              </div>
+              <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="#">Forgot Password</a>
+              </div>
+              <button type="submit" class="btn">Login</button>
+              <div class="register-link">
+                <p>Dont have an account? <a href="#">Register</a></p>
+              </div>
+                {% if error %}
+                 <p style="color: red;">{{ error }}</p>
+                {% endif %}
+            </form>
+          </div>
+    </body>
+</html>
