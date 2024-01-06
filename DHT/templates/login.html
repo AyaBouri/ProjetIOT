@@ -58,6 +58,10 @@
             border: none;
             outline: none;
             border-bottom:2px solid #fff;
+            font-size:16px;
+            color:#fff;
+            font-weight:500;
+            padding-right:23px;
             transition:.5s;
         }
         .input-box input:focus,
@@ -86,7 +90,7 @@
             transform: translateY(-50%);
             font-size:18px;
             color:#fff;
-            transition:#0ef;
+            transition:.5s;
         }
         .input-box input:focus~i,
         .input-box input:valid~i{
@@ -104,6 +108,9 @@
             font-size:16px;
             color:#fff;
             font-weight:600;
+        }
+        .btn::before{
+            content:'';
         }
         .form-box .logreg-link{
             font-size:14.5px;
@@ -124,7 +131,7 @@
     <body>
          <div class="wrapper">
              <div class="form-box login">
-                 <!--{% csrf_token }-->
+                 {% csrf_token }
                  <form action="post">
                      <h2>Login</h2>
                      <div class="input-box">
@@ -141,9 +148,7 @@
                          <label><input type="checkbox">Remember me</label>
                          <a href="LoginPasswd.html">Forgot Password?</a>
                      </div>-->
-                     <a href="index.html">
-                         <button type="submit" class="btn">Login</button>
-                     </a>
+                         <button type="submit" class="btn" href="index">Login</button>
                      <div class="logreg-link">
                          <p>Don't Have an Account? <a href="#">Register</a> </p>
                      </div>
