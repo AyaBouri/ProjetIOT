@@ -243,6 +243,13 @@
                          <label>Password</label>
                          <i class="bx bxs-lock-alt"></i>
                      </div>
+                     <button type="submit" class="btn" href="index">Login</button>
+                     <div class="logreg-link">
+                         <p>Don't Have an Account? <a href="#">Register</a> </p>
+                     </div>
+                      {% if error %}
+                         <p style="color: red;">{{ error }}</p>
+                      {% endif %}
                  </form>
              </div>
          </div>
