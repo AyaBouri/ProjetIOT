@@ -13,5 +13,5 @@ urlpatterns = [
     path('chart-data-semaine/',views.chart_data_semaine,name='chart-data-semaine'),
     path('chart-data-mois/',views.chart_data_mois,name='chart-data-mois'),
     path('login/',views.login_user,name="login"),
-    path('login/index',views.table,name='index')
+    path('login/index/',views.table,name='index')
 ]
