@@ -1,3 +1,5 @@
+from pipes import Template
+from tempfile import template
 from django.shortcuts import render
 from .models import Dht11  # Assurez-vous d'importer le modèle Dht11
 from django.utils import timezone
